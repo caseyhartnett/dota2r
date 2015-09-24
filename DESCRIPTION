@@ -1,0 +1,13 @@
+Package: dota2r
+Type: Package
+Title: DOTA 2 api wrapper
+Version: 0.1
+Date: 2015-09-21
+Author: Casey Hartnett
+Maintainer: Who to complain to <caseyhartnett@gmail.com>
+Description: More about what it does (maybe more than one line)
+License: What license is it under?
+LazyData: TRUE
+Imports:
+    RCurl,
+    jsonlite
