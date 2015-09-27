@@ -19,7 +19,7 @@ set_api_key <- function(key) {
 #' get_api_key()
 get_api_key <- function(){
   key = Sys.getenv("STEAM_KEY")
-  return(key$key)
+  return(key)
 }
 
 #' Returns details for api config
