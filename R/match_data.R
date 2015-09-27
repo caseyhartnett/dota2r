@@ -11,7 +11,7 @@ get_match <- function(hero_id = NULL, game_mode = NULL, skill = NULL, min_player
 
   options_printout <- create_options_printout(options)
   request = paste0(api$url, "IDOTA2Match_570/GetMatchHistory/V001/?key=", api$key, options_printout)
-  data = fromJSON(getURL(request))
+  data = rjson::fromJSON(RCurl::getURL(request))
   return(data)
 }
 
