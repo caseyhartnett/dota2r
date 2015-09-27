@@ -1,31 +1,48 @@
 
+#' Saves the api key
+#'
+#' @param key steam api key
+#' @export
 set_api_key <- function(key) {
   data = data.frame("key" = key)
   write.table(data, "key.txt")
 }
 
+#' Return the stored api key
+#'
+#' @return Steam api key
+#' @export
+#'
+#' @examples
+#' get_api_key()
 get_api_key <- function(){
   key = read.table("key.txt", stringsAsFactors = FALSE)
   return(key$key)
 }
 
+#' Returns details for api config
+#'
+#' @return list with url and key
+#' @export
+#'
+#' @examples
+#' get_api_getails()
 get_api_details <- function(){
   api_details <- list(
     url = "https://api.steampowered.com/",
     key = get_api_key())
 }
 
-# GetMatchHistory Options
-#   hero_id=<id>                   # Search for matches with a specific hero being played (hero ID, not name, see HEROES below)
-#   game_mode=<mode>               # Search for matches of a given mode (see below)
-#   skill=<skill>                  # 0 for any, 1 for normal, 2 for high, 3 for very high skill (default is 0)
-#   min_players=<count>            # the minimum number of players required in the match
-#   account_id=<id>                # Search for all matches for the given user (32-bit or 64-bit steam ID)
-#   league_id=<id>                 # matches for a particular league
-#   start_at_match_id=<id>         # Start the search at the indicated match id, descending
-#   matches_requested=<n>          # Maximum is 25 matches (default is 25)
-#   tournament_games_only=<string> # set to only show tournament games
-
+#' Convert options list into string for url request
+#'
+#' @param options list of options for query
+#'
+#' @return a string to be used in url request
+#' @export
+#'
+#' @examples
+#' options = list("hero_id" = 1)
+#' create_options_printout(options)
 create_options_printout <- function(options){
   options_printout = "&"
   for (i in 1:length(options)) {
