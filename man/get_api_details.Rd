@@ -13,6 +13,6 @@ list with url and key
 Returns details for api config
 }
 \examples{
-get_api_getails()
+get_api_details()
 }
 

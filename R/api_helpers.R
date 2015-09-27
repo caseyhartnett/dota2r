@@ -16,7 +16,7 @@ set_api_key <- function(key) {
 #' @examples
 #' get_api_key()
 get_api_key <- function(){
-  key = read.table("key.txt", stringsAsFactors = FALSE)
+  key = Sys.getenv("STEAM_KEY")
   return(key$key)
 }
 
@@ -26,7 +26,7 @@ get_api_key <- function(){
 #' @export
 #'
 #' @examples
-#' get_api_getails()
+#' get_api_details()
 get_api_details <- function(){
   api_details <- list(
     url = "https://api.steampowered.com/",
@@ -53,6 +53,6 @@ create_options_printout <- function(options){
       sep = "&")
   }
   # remove last & added by sep
-  options_printout %<>% substr(1, nchar(options_printout) - 1)
+  options_printout <- substr(options_printout, 1, nchar(options_printout) - 1)
   return(options_printout)
 }
