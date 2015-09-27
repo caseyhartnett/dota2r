@@ -4,8 +4,10 @@
 #' @param key steam api key
 #' @export
 set_api_key <- function(key) {
-  data = data.frame("key" = key)
-  write.table(data, "key.txt")
+  env_string = paste0("STEAM_KEY=", key)
+  fileConn <- file(".Renviron")
+  writeLines(env_string, fileConn)
+  close(fileConn)
 }
 
 #' Return the stored api key
