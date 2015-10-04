@@ -1,6 +1,17 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-dplyr
-=====
+dota2r
+======
 
 dota2r is a basic api tool to access the data about dota 2
+
+[Dota 2 api information](http://dev.dota2.com/showthread.php?t=58317)
+
+Get started
+-----------
+
+`devtools::install_github("caseyhartnett/dota2r")`
+
+[Get your api key here](http://steamcommunity.com/dev/apikey)
+
+Save your api key with this function. `set_api_key('paste key here')`
