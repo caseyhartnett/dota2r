@@ -33,3 +33,20 @@ get_match <- function(hero_id = NULL, game_mode = NULL, skill = NULL, min_player
   return(data)
 }
 
+#' Retrieve details for a single match
+#'
+#' @param match_id The match id you are interested in.
+#' @param api list from get_api_details
+#'
+#' @return api results in a list
+#' @export
+#'
+#' @examples
+#' get_match_details(1843264929)
+get_match_details <- function(match_id, api = get_api_details()){
+  options = list("match_id" = match_id)
+  options_printout <- create_options_printout(options)
+  request = paste0(api$url, "IDOTA2Match_570/GetMatchDetails/V001/?key=", api$key, options_printout)
+  data = rjson::fromJSON(RCurl::getURL(request))
+  return(data)
+}
