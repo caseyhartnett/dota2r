@@ -1,13 +1,14 @@
 Package: dota2r
 Type: Package
-Title: DOTA 2 api wrapper
+Title: DOTA 2 API wrapper
 Version: 0.1
-Date: 2015-09-21
-Author: Casey Hartnett
-Maintainer: Who to complain to <caseyhartnett@gmail.com>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
-LazyData: TRUE
+Date: 2015-10-4
+Authors@R: person("Casey", "Hartnett", email = "caseyhartnett@gmail.com",
+                  role = c("aut", "cre"))
+Description:
+  A API wrapper for dota 2 game data. The goal is to have every available option for the api available
+  and easy to use. In the future, may expand to the rest of the api calls for Steam.
+License: MIT
 Imports:
     RCurl,
     rjson,
