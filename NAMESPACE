@@ -3,6 +3,8 @@
 export(create_options_printout)
 export(get_api_details)
 export(get_api_key)
+export(get_heroes)
+export(get_item_details)
 export(get_match)
 export(get_match_details)
 export(set_api_key)
