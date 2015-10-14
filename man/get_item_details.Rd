@@ -18,6 +18,6 @@ api results in a list
 Retrieve details about a item
 }
 \examples{
-gget_item_details(item_id)
+get_item_details(item_id)
 }
 
